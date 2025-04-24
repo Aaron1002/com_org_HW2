@@ -1,6 +1,6 @@
 "fmul.s f1, %[A_Re], %[B_Re]\n\t"
 
-"addi %[fmul_cnt] %[fmul_cnt], 1\n\t"
+"addi %[fmul_cnt], %[fmul_cnt], 1\n\t"
 
 
 "fmul.s f2, %[A_Im], %[B_Im]\n\t"
