@@ -3,7 +3,8 @@
                 "add t0, x0, x0\n\t"
                 "add t2, x0, x0\n\t"
 
-"Loop_bit:\n\t"     "addi %[add_cnt], %[add_cnt], 2\n\t"
+"Loop_bit:\n\t"     
+                    "addi %[add_cnt], %[add_cnt], 2\n\t"
                     "addi %[others_cnt], %[others_cnt], 2\n\t"
                 "addi t2, t2, 1\n\t"
                 "andi t0, %[b], 1\n\t"
@@ -14,5 +15,6 @@
                 "srli %[b], %[b], 1\n\t"                
                 "jal x0, Loop_bit\n\t"
 
-"Exit_bit:\n\t"     "addi %[add_cnt], %[add_cnt], 1\n\t"
+"Exit_bit:\n\t"     
+                    "addi %[add_cnt], %[add_cnt], 1\n\t"
                 "add %[b], t0, x0\n\t"

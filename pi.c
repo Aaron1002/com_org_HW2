@@ -6,7 +6,8 @@
             "addi t1, x0, 1\n\t"
             "fcvt.s.w f2, t1\n\t"
 
-"Loop_pi:\n\t"  "addi %[add_cnt], %[add_cnt], 1\n\t"
+"Loop_pi:\n\t"  
+                "addi %[add_cnt], %[add_cnt], 1\n\t"
                 "addi %[others_cnt], %[others_cnt], 1\n\t"
             "addi %[N], %[N], -1\n\t"
             "blt %[N], x0, Exit_pi\n\t"
@@ -26,17 +27,20 @@
                 "addi %[others_cnt], %[others_cnt], 1\n\t"
             "jal x0, Odd\n\t"
 
-"Even:\n\t"     "addi %[fsub_cnt], %[fsub_cnt], 1\n\t"
+"Even:\n\t"     
+                "addi %[fsub_cnt], %[fsub_cnt], 1\n\t"
                 "addi %[others_cnt], %[others_cnt], 1\n\t"
             "fsub.s %[pi], %[pi], f1\n\t"
             "jal x0, f2_up\n\t"
 
-"Odd:\n\t"      "addi %[fadd_cnt], %[fadd_cnt], 1\n\t"
+"Odd:\n\t"      
+                "addi %[fadd_cnt], %[fadd_cnt], 1\n\t"
                 "addi %[others_cnt], %[others_cnt], 1\n\t"
             "fadd.s %[pi], %[pi], f1\n\t"
             "jal x0, f2_up\n\t"
 
-"f2_up:\n\t"    "addi %[add_cnt], %[add_cnt], 1\n\t"
+"f2_up:\n\t"    
+                "addi %[add_cnt], %[add_cnt], 1\n\t"
                 "addi %[others_cnt], %[others_cnt], 2\n\t"
                 "addi %[fadd_cnt], %[fadd_cnt], 1\n\t"
             "addi t3, t1, 1\n\t"
