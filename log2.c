@@ -5,7 +5,7 @@
             "addi %[others_cnt], %[others_cnt], 1\n\t"
             "beq %[N], t0, Exit_log\n\t"
 
-            "srli %[N], %[N], 2\n\t"
+            "srli %[N], %[N], 1\n\t"
             "addi %[others_cnt], %[others_cnt], 1\n\t"
 
             "addi %[log], %[log], 1\n\t"
