@@ -1,8 +1,10 @@
-#define macro_fft_cycle_count fft_cycle_count = 0;
+#define macro_fft_cycle_count fft_cycle_count = add_cnt*add_CPI + sub_cnt*sub_CPI \
++ mul_cnt*mul_CPI + div_cnt*div_CPI + lw_cnt*lw_CPI + sw_cnt*sw_CPI + others_cnt*others_CPI \
++ fadd_cnt*fadd_CPI + fsub_cnt*fsub_CPI + fmul_cnt*fmul_CPI + fdiv_cnt*fdiv_CPI;
 
-#define macro_fft_cpu_time fft_cpu_time = 0;
+#define macro_fft_cpu_time fft_cpu_time = fft_cycle_count * cycle_time;
 
-#define macro_calc_fft_ratio fft_ratio = 0;
+#define macro_calc_fft_ratio fft_ratio = (fft_cycle_count - (lw_cnt*lw_CPI + sw_cnt*sw_CPI)) / fft_cycle_count;
 
 #define macro_arraymul_vector_cycle_count arraymul_vector_cycle_count = 0;
 
