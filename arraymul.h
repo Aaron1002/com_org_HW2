@@ -2,7 +2,7 @@
 #define _CONSTANT_H_
 
 #ifndef ARR_SIZE
-#define ARR_SIZE 4
+#define ARR_SIZE 4 
 #endif
 int arr_size = ARR_SIZE;
 int count = 0;
